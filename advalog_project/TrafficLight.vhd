@@ -48,7 +48,7 @@ begin
 	if clr = '1' then 
 						state <= s0;
 						count <= X"0";
-	elsif clk'event and clk = "1" then 
+	elsif clk'event and clk = '1' then 
 		case state is 
 			when s0 => 
 				if count < SEC5 then

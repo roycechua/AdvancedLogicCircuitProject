@@ -3,3 +3,8 @@ xst -intstyle ise -ifn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLigh
 xst -intstyle ise -ifn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.xst" -ofn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.syr" 
 xst -intstyle ise -ifn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.xst" -ofn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.syr" 
 xst -intstyle ise -ifn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.xst" -ofn "C:/.Xilinx/activities/advalog_project/Entity_TrafficLight.syr" 
+xst -intstyle ise -ifn "C:/Users/user/Desktop/TIP/My Programming Files/_Projects/AdvaLog Project/AdvancedLogicCircuitProject/advalog_project/Entity_TrafficLight.xst" -ofn "C:/Users/user/Desktop/TIP/My Programming Files/_Projects/AdvaLog Project/AdvancedLogicCircuitProject/advalog_project/Entity_TrafficLight.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 "Entity_TrafficLight.ngc" Entity_TrafficLight.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Entity_TrafficLight_map.ncd Entity_TrafficLight.ngd Entity_TrafficLight.pcf 
+par -w -intstyle ise -ol high -mt off Entity_TrafficLight_map.ncd Entity_TrafficLight.ncd Entity_TrafficLight.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Entity_TrafficLight.twx Entity_TrafficLight.ncd -o Entity_TrafficLight.twr Entity_TrafficLight.pcf 

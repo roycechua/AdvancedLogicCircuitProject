@@ -105,26 +105,19 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" into library work
+Parsing VHDL file "C:\Users\user\Desktop\TIP\My Programming Files\_Projects\AdvaLog Project\AdvancedLogicCircuitProject\advalog_project\TrafficLight.vhd" into library work
 Parsing entity <Entity_TrafficLight>.
 Parsing architecture <Arch_TrafficLight> of entity <entity_trafficlight>.
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 54: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 62: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:806 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 68: Syntax error near "thn".
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 70: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:806 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 71: Syntax error near "else".
-ERROR:HDLCompiler:806 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 74: Syntax error near "if".
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 78: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 86: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 94: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:1731 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 49: found '0' definitions of operator "=", cannot determine exact overloaded matching definition for "="
-ERROR:HDLCompiler:854 - "C:\.Xilinx\activities\advalog_project\TrafficLight.vhd" Line 36: Unit <arch_trafficlight> ignored due to previous errors.
-VHDL file C:\.Xilinx\activities\advalog_project\TrafficLight.vhd ignored due to errors
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+ERROR:Xst:2793 - Top module <TrafficLight> specified via the -top switch was not found in any library.
 --> 
 
-Total memory usage is 295208 kilobytes
+Total memory usage is 208892 kilobytes
 
-Number of errors   :   11 (   0 filtered)
+Number of errors   :    1 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
