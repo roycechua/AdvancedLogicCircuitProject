@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Jet/Documents/GitHub/AdvancedLogicCircuitProject/advalog_project/trafficLightTB_isim_beh.exe" -prj "C:/Users/Jet/Documents/GitHub/AdvancedLogicCircuitProject/advalog_project/trafficLightTB_beh.prj" "work.trafficLightTB" 
