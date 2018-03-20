@@ -1,0 +1,11 @@
+NET "clk" LOC="V10" | IOSTANDARD = LVCMOS33;
+
+NET "tf[0]"            LOC = "D14" ;
+NET "tf[1]"            LOC = "E12" ;
+NET "tf[2]"            LOC = "F12" ;
+NET "tf[3]"            LOC = "V13" ;
+
+NET "light[0]"               LOC = "E13"| SLEW = SLOW | DRIVE = 4 ;
+NET "light[1]"               LOC = "C14"| SLEW = SLOW | DRIVE = 4 ;
+NET "light[2]"               LOC = "C4" | SLEW = SLOW | DRIVE = 4 ;
+#NET "GPIO_LED<3>"               LOC = "A4" | SLEW = SLOW | DRIVE = 4 ;

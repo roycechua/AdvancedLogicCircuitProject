@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.20 secs
  
 --> Reading design: Entity_TrafficLight.prj
 
@@ -114,7 +114,7 @@ Parsing architecture <Arch_TrafficLight> of entity <entity_trafficlight>.
 =========================================================================
 
 Elaborating entity <Entity_TrafficLight> (architecture <Arch_TrafficLight>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project\TrafficLight.vhd" Line 101. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project\TrafficLight.vhd" Line 102. Case statement is complete. others clause is never selected
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -122,14 +122,14 @@ INFO:HDLCompiler:679 - "C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProjec
 
 Synthesizing Unit <Entity_TrafficLight>.
     Related source file is "C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project\TrafficLight.vhd".
-    Found 8-bit register for signal <count>.
+    Found 32-bit register for signal <count>.
     Found 3-bit register for signal <state>.
     Found finite state machine <FSM_0> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
     | Transitions        | 12                                             |
     | Inputs             | 3                                              |
-    | Outputs            | 14                                             |
+    | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | clr (positive)                                 |
     | Reset type         | asynchronous                                   |
@@ -138,15 +138,16 @@ Synthesizing Unit <Entity_TrafficLight>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <count[7]_GND_5_o_add_21_OUT> created at line 96.
-    Found 8-bit comparator greater for signal <count[7]_GND_5_o_LessThan_9_o> created at line 70
-    Found 8-bit comparator greater for signal <count[7]_GND_5_o_LessThan_13_o> created at line 78
-    Found 8-bit comparator greater for signal <count[7]_GND_5_o_LessThan_21_o> created at line 94
+    Found 32-bit adder for signal <count[31]_GND_5_o_add_21_OUT> created at line 97.
+    Found 3-bit 7-to-1 multiplexer for signal <light> created at line 35.
+    Found 32-bit comparator greater for signal <GND_5_o_count[31]_LessThan_9_o> created at line 71
+    Found 32-bit comparator greater for signal <GND_5_o_count[31]_LessThan_13_o> created at line 79
+    Found 32-bit comparator greater for signal <GND_5_o_count[31]_LessThan_21_o> created at line 95
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   8 D-type flip-flop(s).
+	inferred  32 D-type flip-flop(s).
 	inferred   3 Comparator(s).
-	inferred   7 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <Entity_TrafficLight> synthesized.
 
@@ -155,13 +156,14 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
- 8-bit adder                                           : 1
+ 32-bit adder                                          : 1
 # Registers                                            : 1
- 8-bit register                                        : 1
+ 32-bit register                                       : 1
 # Comparators                                          : 3
- 8-bit comparator greater                              : 3
-# Multiplexers                                         : 7
- 8-bit 2-to-1 multiplexer                              : 7
+ 32-bit comparator greater                             : 3
+# Multiplexers                                         : 8
+ 3-bit 7-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 7
 # FSMs                                                 : 1
 
 =========================================================================
@@ -176,13 +178,14 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
- 8-bit adder                                           : 1
-# Registers                                            : 8
- Flip-Flops                                            : 8
+ 32-bit adder                                          : 1
+# Registers                                            : 32
+ Flip-Flops                                            : 32
 # Comparators                                          : 3
- 8-bit comparator greater                              : 3
-# Multiplexers                                         : 7
- 8-bit 2-to-1 multiplexer                              : 7
+ 32-bit comparator greater                             : 3
+# Multiplexers                                         : 8
+ 3-bit 7-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 7
 # FSMs                                                 : 1
 
 =========================================================================
@@ -204,11 +207,13 @@ Optimizing FSM <FSM_0> on signal <state[1:6]> with one-hot encoding.
 -------------------
 
 Optimizing unit <Entity_TrafficLight> ...
-WARNING:Xst:1710 - FF/Latch <count_7> (without init value) has a constant value of 0 in block <Entity_TrafficLight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <count_29> has a constant value of 0 in block <Entity_TrafficLight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_30> has a constant value of 0 in block <Entity_TrafficLight>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_31> has a constant value of 0 in block <Entity_TrafficLight>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Entity_TrafficLight, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block Entity_TrafficLight, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -216,8 +221,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 13
- Flip-Flops                                            : 13
+# Registers                                            : 35
+ Flip-Flops                                            : 35
 
 =========================================================================
 
@@ -240,21 +245,26 @@ Top Level Output File Name         : Entity_TrafficLight.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 25
+# BELS                             : 181
+#      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 4
-#      LUT3                        : 5
-#      LUT4                        : 6
-#      LUT5                        : 4
-#      LUT6                        : 5
-# FlipFlops/Latches                : 13
-#      FDC                         : 12
+#      LUT1                        : 28
+#      LUT2                        : 29
+#      LUT3                        : 8
+#      LUT4                        : 12
+#      LUT5                        : 17
+#      LUT6                        : 8
+#      MUXCY                       : 47
+#      VCC                         : 1
+#      XORCY                       : 29
+# FlipFlops/Latches                : 35
+#      FDC                         : 34
 #      FDP                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 12
-#      IBUF                        : 1
-#      OBUF                        : 11
+# IO Buffers                       : 8
+#      IBUF                        : 5
+#      OBUF                        : 3
 
 Device utilization summary:
 ---------------------------
@@ -263,20 +273,20 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              13  out of  18224     0%  
- Number of Slice LUTs:                   25  out of   9112     0%  
-    Number used as Logic:                25  out of   9112     0%  
+ Number of Slice Registers:              35  out of  18224     0%  
+ Number of Slice LUTs:                  103  out of   9112     1%  
+    Number used as Logic:               103  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     25
-   Number with an unused Flip Flop:      12  out of     25    48%  
-   Number with an unused LUT:             0  out of     25     0%  
-   Number of fully used LUT-FF pairs:    13  out of     25    52%  
+ Number of LUT Flip Flop pairs used:    103
+   Number with an unused Flip Flop:      68  out of    103    66%  
+   Number with an unused LUT:             0  out of    103     0%  
+   Number of fully used LUT-FF pairs:    35  out of    103    33%  
    Number of unique control sets:         1
 
 IO Utilization: 
- Number of IOs:                          13
- Number of bonded IOBs:                  13  out of    232     5%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -302,7 +312,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 13    |
+clk                                | BUFGP                  | 35    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -313,10 +323,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.421ns (Maximum Frequency: 184.468MHz)
-   Minimum input arrival time before clock: 2.884ns
-   Maximum output required time after clock: 5.430ns
-   Maximum combinational path delay: No path found
+   Minimum period: 5.307ns (Maximum Frequency: 188.421MHz)
+   Minimum input arrival time before clock: 3.356ns
+   Maximum output required time after clock: 7.034ns
+   Maximum combinational path delay: 7.626ns
 
 Timing Details:
 ---------------
@@ -324,34 +334,39 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.421ns (frequency: 184.468MHz)
-  Total number of paths / destination ports: 351 / 13
+  Clock period: 5.307ns (frequency: 188.421MHz)
+  Total number of paths / destination ports: 4633 / 35
 -------------------------------------------------------------------------
-Delay:               5.421ns (Levels of Logic = 4)
-  Source:            count_5 (FF)
+Delay:               5.307ns (Levels of Logic = 9)
+  Source:            count_7 (FF)
   Destination:       count_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: count_5 to count_0
+  Data Path: count_7 to count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              4   0.525   1.234  count_5 (count_5)
-     LUT6:I1->O            6   0.254   0.876  count[7]_GND_5_o_LessThan_13_o11 (count[7]_GND_5_o_LessThan_13_o)
-     LUT3:I2->O            1   0.254   0.790  Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>3_SW0_SW0 (N7)
-     LUT6:I4->O            7   0.250   0.910  Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>3 (Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>3)
+     FDC:C->Q              7   0.525   1.340  count_7 (count_7)
+     LUT5:I0->O            1   0.254   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_lut<0> (Mcompar_GND_5_o_count[31]_LessThan_9_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<0> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<1> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<2> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<3> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<4> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<4>)
+     MUXCY:CI->O           4   0.235   0.912  Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<5> (Mcompar_GND_5_o_count[31]_LessThan_9_o_cy<5>)
+     LUT6:I4->O           15   0.250   1.155  Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>3 (Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>3)
      LUT2:I1->O            1   0.254   0.000  Mmux_state[2]_X_5_o_wide_mux_25_OUT<0>1 (state[2]_X_5_o_wide_mux_25_OUT<0>)
      FDC:D                     0.074          count_0
     ----------------------------------------
-    Total                      5.421ns (1.611ns logic, 3.810ns route)
-                                       (29.7% logic, 70.3% route)
+    Total                      5.307ns (1.900ns logic, 3.407ns route)
+                                       (35.8% logic, 64.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 13 / 13
+  Total number of paths / destination ports: 35 / 35
 -------------------------------------------------------------------------
-Offset:              2.884ns (Levels of Logic = 1)
+Offset:              3.356ns (Levels of Logic = 1)
   Source:            clr (PAD)
   Destination:       count_0 (FF)
   Destination Clock: clk rising
@@ -360,31 +375,52 @@ Offset:              2.884ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            13   1.328   1.097  clr_IBUF (clr_IBUF)
+     IBUF:I->O            35   1.328   1.569  clr_IBUF (clr_IBUF)
      FDC:CLR                   0.459          count_0
     ----------------------------------------
-    Total                      2.884ns (1.787ns logic, 1.097ns route)
-                                       (62.0% logic, 38.0% route)
+    Total                      3.356ns (1.787ns logic, 1.569ns route)
+                                       (53.2% logic, 46.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 14 / 11
+  Total number of paths / destination ports: 15 / 3
 -------------------------------------------------------------------------
-Offset:              5.430ns (Levels of Logic = 2)
-  Source:            state_FSM_FFd6 (FF)
-  Destination:       light<8> (PAD)
+Offset:              7.034ns (Levels of Logic = 3)
+  Source:            state_FSM_FFd1 (FF)
+  Destination:       light<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: state_FSM_FFd6 to light<8>
+  Data Path: state_FSM_FFd1 to light<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q              7   0.525   1.018  state_FSM_FFd6 (state_FSM_FFd6)
-     LUT2:I0->O            2   0.250   0.725  light<8>1 (light_8_OBUF)
-     OBUF:I->O                 2.912          light_8_OBUF (light<8>)
+     FDC:C->Q              5   0.525   1.296  state_FSM_FFd1 (state_FSM_FFd1)
+     LUT6:I0->O            1   0.254   1.112  Mmux_light<0>2 (Mmux_light<0>1)
+     LUT6:I1->O            1   0.254   0.681  Mmux_light<0>5 (light_0_OBUF)
+     OBUF:I->O                 2.912          light_0_OBUF (light<0>)
     ----------------------------------------
-    Total                      5.430ns (3.687ns logic, 1.743ns route)
-                                       (67.9% logic, 32.1% route)
+    Total                      7.034ns (3.945ns logic, 3.089ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 22 / 3
+-------------------------------------------------------------------------
+Delay:               7.626ns (Levels of Logic = 4)
+  Source:            tf<0> (PAD)
+  Destination:       light<0> (PAD)
+
+  Data Path: tf<0> to light<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.328   1.104  tf_0_IBUF (tf_0_IBUF)
+     LUT6:I3->O            1   0.235   1.112  Mmux_light<0>2 (Mmux_light<0>1)
+     LUT6:I1->O            1   0.254   0.681  Mmux_light<0>5 (light_0_OBUF)
+     OBUF:I->O                 2.912          light_0_OBUF (light<0>)
+    ----------------------------------------
+    Total                      7.626ns (4.729ns logic, 2.897ns route)
+                                       (62.0% logic, 38.0% route)
 
 =========================================================================
 
@@ -396,20 +432,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.421|         |         |         |
+clk            |    5.307|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.17 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.36 secs
  
 --> 
 
-Total memory usage is 313088 kilobytes
+Total memory usage is 317488 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

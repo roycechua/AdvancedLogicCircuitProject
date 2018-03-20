@@ -31,23 +31,24 @@ use ieee.std_logic_unsigned.ALL;
 entity Entity_TrafficLight is
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
-           light : out  STD_LOGIC_VECTOR (10 downto 0));
+			  tf : in STD_LOGIC_VECTOR (3 downto 0);
+           light : out  STD_LOGIC_VECTOR (2 downto 0));
 end Entity_TrafficLight;
 
 architecture Arch_TrafficLight of Entity_TrafficLight is
 type state_type is (s0, s1, s2, s3, s4, s5); -- Creates 6 states for the traffic light
 signal state: state_type; 
-signal count: STD_LOGIC_VECTOR(7 downto 0);
-constant SEC30: STD_LOGIC_VECTOR(7 downto 0) := "01011010";
-constant SEC15: STD_LOGIC_VECTOR(7 downto 0) := "00001111"; 
-constant SEC1: STD_LOGIC_VECTOR(7 downto 0) := "00000011"; 
+signal count: integer := 0;
+constant SEC30: integer := 405000000;
+constant SEC15: integer := 202500000;
+constant SEC1: integer := 13500000;
 begin
 
 process(clk,clr) 
 begin
 	if clr = '1' then 
 						state <= s0;
-						count <= "00000000";
+						count <= 0;
 	elsif clk'event and clk = '1' then 
 		case state is 
 			when s0 => 
@@ -56,7 +57,7 @@ begin
 					count <= count + 1;
 				else
 					state <= s1;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when s1 =>
 				if count < SEC1 then
@@ -64,7 +65,7 @@ begin
 					count <= count + 1;
 				else
 					state <= s2;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when s2 => 
 				if count < SEC15 then
@@ -72,7 +73,7 @@ begin
 					count <= count + 1;
 				else
 					state <= s3;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when s3 =>
 				if count < SEC30 then
@@ -80,7 +81,7 @@ begin
 					count <= count + 1;
 				else
 					state <= s4;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when s4 =>
 				if count < SEC1 then
@@ -88,7 +89,7 @@ begin
 					count <= count + 1;
 				else state <= s5;
 					state <= s5;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when s5 =>
 				if count < SEC1 then
@@ -96,7 +97,7 @@ begin
 					count <= count + 1;
 				else
 					state <= s0;
-					count <= "00000000";
+					count <= 0;
 				end if;
 			when others =>
 					state <= s0;
@@ -104,15 +105,64 @@ begin
 	end if;
 end process;
 
-C2: process(state)
+C2: process(state,tf)
 begin
-case state is
-	when s0 => light <= "10010000101"; -- traffic light 1: red traffic light 2: green
-	when s1 => light <= "01001000101"; --                  red                  yellow
-	when s2 => light <= "00100100110"; --                  red                  red
-	when s3 => light <= "00100110001"; --                  green                red
-	when s4 => light <= "00100101001"; --                  yellow               red
-	when s5 => light <= "00100100101"; --                  red                  red
+--case state is
+--	when s0 => light <= "10010000101"; -- traffic light 1: red traffic light 2: green
+--	when s1 => light <= "01001000101"; --                  red                  yellow
+--	when s2 => light <= "00100100110"; --                  red                  red
+--	when s3 => light <= "00100110001"; --                  green                red
+--	when s4 => light <= "00100101001"; --                  yellow               red
+--	when s5 => light <= "00100100101"; --                  red                  red
+if state = s0 then
+	case tf is
+		when "1000" => light <= "100";
+		when "0100" => light <= "100";
+		when "0010" => light <= "001";
+		when "0001" => light <= "001";
+		when others => light <= "000";
+	end case;
+elsif state = s1 then
+	case tf is
+		when "1000" => light <= "010";
+		when "0100" => light <= "010";
+		when "0010" => light <= "001";
+		when "0001" => light <= "001";
+		when others => light <= "000";
+	end case;
+elsif state = s2 then
+	case tf is
+		when "1000" => light <= "001";
+		when "0100" => light <= "001";
+		when "0010" => light <= "001";
+		when "0001" => light <= "100";
+		when others => light <= "000";
+	end case;
+elsif state = s3 then
+	case tf is
+		when "1000" => light <= "001";
+		when "0100" => light <= "001";
+		when "0010" => light <= "100";
+		when "0001" => light <= "001";
+		when others => light <= "000";
+	end case;
+elsif state = s4 then
+	case tf is
+		when "1000" => light <= "001";
+		when "0100" => light <= "001";
+		when "0010" => light <= "010";
+		when "0001" => light <= "001";
+		when others => light <= "000";
+	end case;
+else 
+	case tf is
+		when "1000" => light <= "001";
+		when "0100" => light <= "001";
+		when "0010" => light <= "001";
+		when "0001" => light <= "001";
+		when others => light <= "000";
+		end case;
+end if;
 --TL1     TL2     TL3     TL1.1	Delay
 --Green	 Green	Red     Red		30
 --Yellow	 Yellow	Red     Red		1
@@ -122,7 +172,7 @@ case state is
 --Red	    Red     Red	  Red		1
 
 
-end case;
+
 end process;
 	
 end Arch_TrafficLight;

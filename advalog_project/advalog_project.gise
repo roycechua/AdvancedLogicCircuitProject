@@ -39,6 +39,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Entity_TrafficLight.twr" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Entity_TrafficLight.twx" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Entity_TrafficLight.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="Entity_TrafficLight.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="Entity_TrafficLight.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Entity_TrafficLight.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Entity_TrafficLight_envsettings.html"/>
@@ -65,20 +66,31 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TrafficLight_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TrafficLight_xst.xrpt"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="entity_trafficlight.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="entity_trafficlight.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="entity_trafficlight.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_2"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="trafficLightTB_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="trafficLightTB_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="trafficLightTB_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="trafficLightTB_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -86,44 +98,66 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1519034301" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1519034301">
+    <transform xil_pn:end_ts="1519878946" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519036142" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1519036141">
+    <transform xil_pn:end_ts="1519878946" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TrafficLight.vhd"/>
       <outfile xil_pn:name="trafficLightTB.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1519035295" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5176250464888072093" xil_pn:start_ts="1519035295">
+    <transform xil_pn:end_ts="1519878946" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5176250464888072093" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519035295" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3608719917423717663" xil_pn:start_ts="1519035295">
+    <transform xil_pn:end_ts="1519878946" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3608719917423717663" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519034301" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5692838390518908199" xil_pn:start_ts="1519034301">
+    <transform xil_pn:end_ts="1519878946" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5692838390518908199" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519036142" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1519036142">
+    <transform xil_pn:end_ts="1519878946" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1519878946">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TrafficLight.vhd"/>
       <outfile xil_pn:name="trafficLightTB.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1519036150" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5996992935492981734" xil_pn:start_ts="1519036142">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1519878953" xil_pn:in_ck="9156301181424076996" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5996992935492981734" xil_pn:start_ts="1519878946">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="trafficLightTB_beh.prj"/>
+      <outfile xil_pn:name="trafficLightTB_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1519035732" xil_pn:in_ck="-7486188150618505732" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="712443471415981715" xil_pn:start_ts="1519035732">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1519878953" xil_pn:in_ck="6786451588007012865" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="712443471415981715" xil_pn:start_ts="1519878953">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForced"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="trafficLightTB_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1517312187" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1517312187">
@@ -154,10 +188,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519036207" xil_pn:in_ck="-5459414955263672185" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4324845945506337870" xil_pn:start_ts="1519036198">
+    <transform xil_pn:end_ts="1521520598" xil_pn:in_ck="-5459414955263672185" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4324845945506337870" xil_pn:start_ts="1521520564">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Entity_TrafficLight.lso"/>
       <outfile xil_pn:name="Entity_TrafficLight.ngc"/>
       <outfile xil_pn:name="Entity_TrafficLight.ngr"/>
@@ -170,25 +206,22 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1519029573" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6099960723838093694" xil_pn:start_ts="1519029573">
+    <transform xil_pn:end_ts="1521522793" xil_pn:in_ck="3173733067340936319" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6099960723838093694" xil_pn:start_ts="1521522793">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519036002" xil_pn:in_ck="3173733067340928825" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="3991410740073642372" xil_pn:start_ts="1519035995">
+    <transform xil_pn:end_ts="1521522800" xil_pn:in_ck="4271399435560969112" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="3991410740073642372" xil_pn:start_ts="1521522793">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="Entity_TrafficLight.bld"/>
       <outfile xil_pn:name="Entity_TrafficLight.ngd"/>
       <outfile xil_pn:name="Entity_TrafficLight_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1519036018" xil_pn:in_ck="3173733067340928826" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1519036002">
+    <transform xil_pn:end_ts="1521522808" xil_pn:in_ck="5543203185966176889" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-3180699873896808002" xil_pn:start_ts="1521522800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Entity_TrafficLight.pcf"/>
       <outfile xil_pn:name="Entity_TrafficLight_map.map"/>
       <outfile xil_pn:name="Entity_TrafficLight_map.mrp"/>
@@ -199,10 +232,9 @@
       <outfile xil_pn:name="Entity_TrafficLight_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1519036032" xil_pn:in_ck="-3180867293625830573" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1519036018">
+    <transform xil_pn:end_ts="1521522819" xil_pn:in_ck="-4438889179389765518" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1521522808">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Entity_TrafficLight.ncd"/>
       <outfile xil_pn:name="Entity_TrafficLight.pad"/>
       <outfile xil_pn:name="Entity_TrafficLight.par"/>
@@ -214,10 +246,31 @@
       <outfile xil_pn:name="Entity_TrafficLight_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1519036032" xil_pn:in_ck="3173733067340928694" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1519036027">
+    <transform xil_pn:end_ts="1521522835" xil_pn:in_ck="3173733067340928694" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1521522823">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="Entity_TrafficLight.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="entity_trafficlight.bgn"/>
+      <outfile xil_pn:name="entity_trafficlight.bit"/>
+      <outfile xil_pn:name="entity_trafficlight.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1521522843" xil_pn:in_ck="2374609017485580512" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1521522841">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1521520752" xil_pn:in_ck="2374609017485580512" xil_pn:name="TRAN_analyzeDesignUsingChipscope" xil_pn:prop_ck="3991410740073642372" xil_pn:start_ts="1521520752">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1521522819" xil_pn:in_ck="3685804795864714869" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1521522814">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Entity_TrafficLight.twr"/>
       <outfile xil_pn:name="Entity_TrafficLight.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

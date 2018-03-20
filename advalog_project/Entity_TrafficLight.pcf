@@ -1,4 +1,15 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Feb 19 18:26:56 2018
+// Written by: Map P.20131013 on Tue Mar 20 13:13:26 2018
 //! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "tf<0>" LOCATE = SITE "D14" LEVEL 1;
+COMP "tf<1>" LOCATE = SITE "E12" LEVEL 1;
+COMP "tf<2>" LOCATE = SITE "F12" LEVEL 1;
+COMP "tf<3>" LOCATE = SITE "V13" LEVEL 1;
+COMP "light<0>" LOCATE = SITE "E13" LEVEL 1;
+COMP "light<1>" LOCATE = SITE "C14" LEVEL 1;
+COMP "light<2>" LOCATE = SITE "C4" LEVEL 1;
+SCHEMATIC END;
 

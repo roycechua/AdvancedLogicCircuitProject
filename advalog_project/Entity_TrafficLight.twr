@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
 -n 3 -fastpaths -xml Entity_TrafficLight.twx Entity_TrafficLight.ncd -o
-Entity_TrafficLight.twr Entity_TrafficLight.pcf
+Entity_TrafficLight.twr Entity_TrafficLight.pcf -ucf Entity_TrafficLight.ucf
 
 Design file:              Entity_TrafficLight.ncd
 Physical constraint file: Entity_TrafficLight.pcf
@@ -37,7 +37,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-clr         |    1.666(R)|      SLOW  |   -0.465(R)|      FAST  |clk_BUFGP         |   0.000|
+clr         |    2.146(R)|      SLOW  |   -0.085(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -45,17 +45,9 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-light<0>    |         9.559(R)|      SLOW  |         3.954(R)|      FAST  |clk_BUFGP         |   0.000|
-light<1>    |         8.951(R)|      SLOW  |         3.664(R)|      FAST  |clk_BUFGP         |   0.000|
-light<2>    |        10.111(R)|      SLOW  |         4.034(R)|      FAST  |clk_BUFGP         |   0.000|
-light<3>    |         8.817(R)|      SLOW  |         3.623(R)|      FAST  |clk_BUFGP         |   0.000|
-light<4>    |         8.920(R)|      SLOW  |         3.640(R)|      FAST  |clk_BUFGP         |   0.000|
-light<5>    |        10.333(R)|      SLOW  |         4.168(R)|      FAST  |clk_BUFGP         |   0.000|
-light<6>    |         9.099(R)|      SLOW  |         3.772(R)|      FAST  |clk_BUFGP         |   0.000|
-light<7>    |         9.113(R)|      SLOW  |         3.752(R)|      FAST  |clk_BUFGP         |   0.000|
-light<8>    |        10.330(R)|      SLOW  |         4.155(R)|      FAST  |clk_BUFGP         |   0.000|
-light<9>    |         9.186(R)|      SLOW  |         3.767(R)|      FAST  |clk_BUFGP         |   0.000|
-light<10>   |         9.317(R)|      SLOW  |         3.860(R)|      FAST  |clk_BUFGP         |   0.000|
+light<0>    |        13.914(R)|      SLOW  |         6.126(R)|      FAST  |clk_BUFGP         |   0.000|
+light<1>    |        12.795(R)|      SLOW  |         6.331(R)|      FAST  |clk_BUFGP         |   0.000|
+light<2>    |        14.312(R)|      SLOW  |         7.053(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -63,18 +55,36 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.667|         |         |         |
+clk            |    5.063|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+tf<0>          |light<0>       |   12.885|
+tf<0>          |light<1>       |   12.356|
+tf<0>          |light<2>       |   13.374|
+tf<1>          |light<0>       |   11.569|
+tf<1>          |light<1>       |   11.479|
+tf<1>          |light<2>       |   12.831|
+tf<2>          |light<0>       |   12.870|
+tf<2>          |light<1>       |   11.375|
+tf<2>          |light<2>       |   13.499|
+tf<3>          |light<0>       |   14.231|
+tf<3>          |light<1>       |   13.926|
+tf<3>          |light<2>       |   14.790|
+---------------+---------------+---------+
 
-Analysis completed Mon Feb 19 18:27:11 2018 
+
+Analysis completed Tue Mar 20 13:13:37 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 279 MB
+Peak Memory Usage: 283 MB
 
 
 

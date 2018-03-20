@@ -97,7 +97,6 @@ static void work_a_2520860709_2372691052_p_1(char *t0)
 {
     char *t1;
     char *t2;
-    int64 t3;
 
 LAB0:    t1 = (t0 + 2880U);
     t2 = *((char **)t1);
@@ -106,28 +105,16 @@ LAB0:    t1 = (t0 + 2880U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(84, ng0);
-    t3 = (100 * 1000LL);
-    t2 = (t0 + 2688);
-    xsi_process_wait(t2, t3);
+LAB2:    xsi_set_current_line(90, ng0);
 
 LAB6:    *((char **)t1) = &&LAB7;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(90, ng0);
-
-LAB10:    *((char **)t1) = &&LAB11;
-    goto LAB1;
+LAB4:    goto LAB2;
 
 LAB5:    goto LAB4;
 
 LAB7:    goto LAB5;
-
-LAB8:    goto LAB2;
-
-LAB9:    goto LAB8;
-
-LAB11:    goto LAB9;
 
 }
 

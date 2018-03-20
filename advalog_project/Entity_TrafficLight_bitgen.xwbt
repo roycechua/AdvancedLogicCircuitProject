@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project\Entity_TrafficLight.ncd
+OUTFILE=C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project\Entity_TrafficLight.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=C:\Users\Jet\Documents\GitHub\AdvancedLogicCircuitProject\advalog_project
+LICENSE=WebPack
+USER_INFO=__0_0_0
